@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class it{  
+    public:  
+    int Pennywise ;
+                    //метод вывода
+                     void Display(){ 
+                     cout<<"Pennywise   =  "<<Pennywise <<endl; 
+                      } 
+            };
+            
+    int main(){
+        it  i1,i2; // объекты класса it
+        it  *uk1, *uk2; //указатели
+        
+        uk1=&i1;
+        uk2=&i2;
+        
+        uk1->Pennywise=4;
+        uk2->Pennywise=7;
+        uk1->Display();
+        uk2->Display();
+        return  0; 
+    }

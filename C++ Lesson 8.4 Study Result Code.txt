@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Booking{  
+    public:  
+    int  BookOne;
+    int  BookTwo; 
+                    //методы
+                     void  Display(){ 
+                     cout<<"BookOne  =  "<<this->BookOne<<endl; 
+                     cout<<"BookTwo  =  "<<this->BookTwo<<endl;
+                      } 
+         
+                     void Assign(int One,int Two){  
+                         this->BookOne=One;    
+                         this->BookTwo=Two;
+                     } 
+                      void AssignTwo(int One,int Two,int Three){  
+                         this->BookOne=One+Two;  //BookOne=12   
+                         this->BookTwo=BookOne-Three; //BookTwo=1
+                         
+                     } 
+            
+                     Booking swap(){  
+                    int s;
+                    s=BookOne;          //7=s
+                    BookOne=BookTwo;    //BookOne=7   ----
+                    BookTwo=s;          //BookTwo=10   ----
+                    return  *this; //изменненый объект возвращается в качестве результата
+                                    }
+                                    
+            };
+            
+    int main(){
+        Booking  B1,B2,B3;
+        B1.Assign(4,7); 
+        B2.Assign(4,7);
+        B3.AssignTwo(4,8,11);
+        B1=B1.swap();
+        cout<<"Объект без изменений"<<endl;
+        B2.Display(); 
+        cout<<"Изменненый объект:"<<endl;
+        B1.Display(); 
+        cout<<":---(-.-)----:"<<endl;
+        B3.Display();
+        return  0; 
+                
+    }
